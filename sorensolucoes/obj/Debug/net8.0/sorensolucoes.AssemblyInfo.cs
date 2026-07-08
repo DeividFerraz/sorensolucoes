@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sorensolucoes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5e16b82255cb2f484e4968432911d3754d92f9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adbd6edbf121c6796350d5fafcdd6c67f13a2227")]
 [assembly: System.Reflection.AssemblyProductAttribute("sorensolucoes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sorensolucoes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
