@@ -1,0 +1,45 @@
+
+name: Deploy aplicattion
+
+on:
+  workflow_run:
+    workflows: ["Build and Push to Docker Hub"]
+    types:
+      - completed
+
+jobs:
+  deployment-cloud-azure:
+    name: deployment azure cloud
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy message
+        run: echo "deploy em produção"
+
+      - name: Set image tag
+        run: echo "IMAGE_TAG=${{ github.event.workflow_run.head_sha }}" >> $GITHUB_ENV
+
+      - name: Login no Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy no Azure Container Apps
+        uses: azure/container-apps-deploy-action@v1
+        with:
+          resourceGroup: ${{ secrets.AZURE_RESOURCE_GROUP }}
+          containerAppName: ca-sorensolucoes-site
+          imageToDeploy: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/sorensolucoes-site:${{ env.IMAGE_TAG }}
+          registryUrl: docker.io
+          registryUsername: ${{ secrets.DOCKERHUB_USERNAME }}
+          registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
