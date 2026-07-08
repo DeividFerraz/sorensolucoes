@@ -1,0 +1,55 @@
+## ---------------------------------------------------------------
+## .NET / Visual Studio - artefatos que NÃO devem ir pro git
+## ---------------------------------------------------------------
+
+# Build
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+artifacts/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# Resultados de teste / cobertura
+[Tt]est[Rr]esult*/
+*.coverage
+*.coveragexml
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+!packages/build/
+
+# Logs e temporários
+*.log
+*.tmp
+*_i.c
+*.cache
+*.dbmdl
+
+# Secrets locais (NÃO versionar credenciais)
+appsettings.*.local.json
+*.pfx
+*.snk
+
+# Node / NPM
+node_modules/
+npm-debug.log*
