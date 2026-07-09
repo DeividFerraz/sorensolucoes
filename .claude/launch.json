@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "soren-web",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "sorensolucoes"],
+      "port": 5197
+    }
+  ]
+}
